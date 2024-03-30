@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="assets/majestic.png" />
     <title>Login Page</title>
   </head>
-  <body background="assets/e.jpg">
-    <center>
-      <div class="container">
-        <div class="logo">
-          <img src="assets/majestic4.png" alt="" />
-        </div>
-        <p>Please log in to continue.</p>
-        <form method="post" action="/login">
-          <label for="username">Username<span style="margin-left:1em">:</span></label>
-          <input type="text" id="username" name="username" required><br><br>
-          <label for="password">Password<span style="margin-left:1.2em">:</span></label>
-          <input type="password" id="password" name="password" required><br><br>
-          <button type="submit">Log In</button>
+  <body>
+    <div class="container">
+      <div class="login">
+        <form action="404-not-found.html" method="get">
+          <h1>LOGIN</h1>
+          <hr />
+          <p>Please log in to continue</p>
+          <label for="">Username</label>
+          <input type="text" placeholder="Username" />
+          <label for="">Password</label>
+          <input type="password" placeholder="Password" />
+          <button style="color: #ffa12c">LOGIN</button>
+          <p>
+            <a href="register.html">REGISTRASI</a>
+          </p>
         </form>
-        <p>Don't have an account? <a href="register.html">Sign up here</a>.</p>
-        <p>Back to <a href="index.html">Home</a>.</p>
       </div>
-    </center>
+      <div class="right">
+        <img src="assets/majestic.png" alt="" class="logo" width="100%" />
+      </div>
+    </div>
   </body>
 </html>

@@ -1,30 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="assets/majestic.png" />
-    <title>Registration Page</title>
+    <title>Daftar</title>
   </head>
-  <body background="assets/laut4.jpg">
-    <center>
-      <div class="container">
-        <div class="logo">
-          <img src="assets/majestic5.png" alt="" />
-        </div>
-        <p>Please fill out the following form to create a new account.</p>
-        <form method="post" action="/register">
-          <label for="username">Username<span style="margin-left:4.4em">:</span></label>
-          <input type="text" id="username" name="username" required><br><br>
-          <label for="email">Email<span style="margin-left:6.1em">:</span></label>
-          <input type="email" id="email" name="email" required><br><br>
-          <label for="password">Password<span style="margin-left:4.6em">:</span></label>
-          <input type="password" id="password" name="password" required><br><br>
-          <label for="confirm-password">Confirm Password<span style="margin-left:1em">:</span></label>
-          <input type="password" id="confirm-password" name="confirm-password" required><br><br>
-          <button type="submit">Create Account</button>
+  <body>
+    <div class="container">
+      <div class="login">
+        <form action="">
+          <h1>SIGN UP</h1>
+          <hr />
+          <p>
+            <label for="username">Userame</label>
+            <input type="text" id="name" placeholder="Usernam" />
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Email" />
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password" />
+            <label for="password">Confirm Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Confirm Password"
+            />
+            <button style="color: #ffa12c" type="submit" class="btn-register">FINISH</button>
+          </p>
         </form>
-        <p>Already have an account? <a href="login.html">Log in here</a>.</p>
-        <p>Back to <a href="index.html">Home</a>.</p>
+        <p>
+          <a href="index.html">Go back home</a>
+        </p>
       </div>
-    </center>
+      <div class="right">
+        <img src="assets/majestic.png" alt="Bokuto Daftar" class="logo" />
+      </div>
+    </div>
   </body>
 </html>
