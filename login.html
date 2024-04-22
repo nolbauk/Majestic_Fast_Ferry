@@ -11,15 +11,32 @@
   <body>
     <div class="container">
       <div class="login">
-        <form action="404-not-found.html" method="get">
+        <form>
           <h1>LOGIN</h1>
           <hr />
           <p>Please log in to continue</p>
-          <label for="">Username</label>
-          <input type="text" placeholder="Username" />
-          <label for="">Password</label>
-          <input type="password" placeholder="Password" />
-          <button style="color: #ffa12c">LOGIN</button>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+          <!-- Implementasi Event pada tombol Login -->
+          <button
+            type="button"
+            onclick="submitLoginForm()"
+            style="color: #ffa12c"
+          >
+            LOGIN
+          </button>
           <p>
             <a href="register.html">REGISTRASI</a>
           </p>
@@ -29,5 +46,23 @@
         <img src="assets/majestic.png" alt="" class="logo" width="100%" />
       </div>
     </div>
+    <script>
+      function submitLoginForm() {
+        // Mengambil nilai dari input username dan password
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        // validasi sederhana
+        if (username === "admin" && password === "123") {
+          alert("Login berhasil!"); // Menampilkan pesan jika login berhasil
+          // Simpan informasi login ke localStorage
+          localStorage.setItem("loggedIn", "true");
+          // Alihkan pengguna ke halaman admin.html
+          window.location.href = "admin.html";
+        } else {
+          alert("Login gagal. Periksa kembali username dan password Anda."); // Menampilkan pesan jika login gagal
+        }
+      }
+    </script>
   </body>
 </html>
