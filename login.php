@@ -64,5 +64,11 @@
         }
       }
     </script>
+    <?php
+    // Set cookie jika login berhasil
+    if (isset($_GET['login']) && $_GET['login'] === 'success') {
+        setcookie('loggedIn', 'true', time() + 5, '/');
+    }
+    ?>
   </body>
 </html>
