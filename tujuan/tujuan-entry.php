@@ -1,5 +1,11 @@
+<?php 
+	session_start();
+	if($_SESSION['username'] == null) {
+		header('location:../login.php');
+	}
+?>
 <!DOCTYPE html>
-<html lang="en">	
+<php lang="en" dir="ltr">	
 <head>
    <meta charset="UTF-8" />
    <link rel="icon" href="../assets/icon.png" />
@@ -19,19 +25,19 @@
 	</div>
 	<ul class="nav-links">
 	   <li>
-		<a href="../admin.html">
+		<a href="../admin.php">
 		   <i class="bx bx-grid-alt"></i>
 		   <span class="links_name">Dashboard</span>
 		</a>
 	   </li>
 	   <li>
-		<a href="../jadwal/jadwal.html">
+		<a href="../jadwal/jadwal.php">
 		   <i class="bx bx-box"></i>
 		   <span class="links_name">Jadwal</span>
 		</a>
 	   </li>
 	   <li>
-		<a href="../tujuan/tujuan.html" class="active">
+		<a href="../tujuan/tujuan.php" class="active">
 		   <i class="bx bx-list-ul"></i>
 		   <span class="links_name">Tujuan</span>
 		</a>
@@ -40,23 +46,23 @@
    </div>
    <section class="home-section">
 	<nav>
-	   <div class="sidebar-button">
-		<i class="bx bx-menu sidebarBtn"></i>
-	   </div>
-	   <div class="profile-details">
-		<a href="#">
-			<i class="bx bx-log-out"></i>
-			<a href="../login.html">Logout</a>
-		</a>
-	   </div>
+		<div class="sidebar-button">
+			<i class="bx bx-menu sidebarBtn"></i>
+		</div>
+		<div class="profile-details">
+			<a href="../logout.php">
+				<i class="bx bx-log-out"></i>
+				<span class="links_name">Logout</span>
+			</a>
+		</div>
 	</nav>
 	<div class="home-content">
 	   <h3>Input Tujuan</h3>
 	   <div class="form-login">
-		<form action="">
-		   <label for="from">From</label>
-		   <input class="input" type="text" name="from"
-				id="from"/>
+		<form action="tujuan-proses.php" method="post" enctype="multipart/form-data">
+		   <label for="dari">From</label>
+		   <input class="input" type="text" name="dari"
+				id="dari"/>
 		   <label for="destination">Destination</label>
 		   <input class="input" type="text" name="destination"
 				id="destination"/>
@@ -72,4 +78,4 @@
 	</div>
    </section>
 </body>
-</html>
+</php>

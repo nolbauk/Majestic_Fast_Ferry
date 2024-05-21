@@ -1,3 +1,10 @@
+<?php 
+	session_start();
+	if($_SESSION['username'] == null) {
+		header('location:login.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,13 +32,13 @@
           </a>
         </li>
         <li>
-          <a href="jadwal/jadwal.html">
+          <a href="jadwal/jadwal.php">
             <i class="bx bx-box"></i>
             <span class="links_name">Jadwal</span>
           </a>
         </li>
         <li>
-          <a href="tujuan/tujuan.html">
+          <a href="tujuan/tujuan.php">
             <i class="bx bx-list-ul"></i>
             <span class="links_name">Tujuan</span>
           </a>
@@ -44,9 +51,9 @@
           <i class="bx bx-menu sidebarBtn"></i>
         </div>
         <div class="profile-details">
-          <a href="#">
+          <a href="logout.php">
             <i class="bx bx-log-out"></i>
-            <a href="login.html">Logout</a>
+            <span class="links_name">Logout</span>
           </a>
         </div>
       </nav>

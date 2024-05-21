@@ -1,5 +1,12 @@
+<?php
+  session_start();
+  if ($_SESSION['username'] == null) {
+    header('location:../login.php');
+  }
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="../assets/icon.png" />
@@ -20,19 +27,19 @@
       </div>
       <ul class="nav-links">
         <li>
-          <a href="../admin.html">
+          <a href="../admin.php">
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="../jadwal/jadwal.html">
+          <a href="../jadwal/jadwal.php">
             <i class="bx bx-box"></i>
             <span class="links_name">Jadwal</span>
           </a>
         </li>
         <li>
-          <a href="../tujuan/tujuan.html" class="active">
+          <a href="../tujuan/tujuan.php" class="active">
             <i class="bx bx-list-ul"></i>
             <span class="links_name">Tujuan</span>
           </a>
@@ -45,16 +52,16 @@
           <i class="bx bx-menu sidebarBtn"></i>
         </div>
         <div class="profile-details">
-          <a href="#">
+          <a href="../logout.php">
             <i class="bx bx-log-out"></i>
-            <a href="../login.html">Logout</a>
+            <span class="links_name">Logout</span>
           </a>
         </div>
       </nav>
       <div class="home-content">
         <h3>Tujuan</h3>
-        <button type="button" class="btn btn-tambah">
-          <a href="tujuan-entry.html">Tambah Data</a>
+        <button type="submit" class="btn btn-tambah">
+          <a href="tujuan-entry.php">Tambah Data</a>
         </button>
         <table class="table-data">
           <thead>
@@ -66,32 +73,38 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>HarbourFront</td>
-              <td>Batam Centre</td>
-              <td>400000</td>
-              <td>
-                <button type="button" class="btn-edit">Edit</button>
-                <button type="button" class="btn-delete" onclick="hapusData()">
-                  Hapus
-                </button>
-              </td>
-            </tr>
+            <?php
+              include '../connection.php';
+              $sql = "SELECT * FROM tb_tujuan";
+              $result = mysqli_query($koneksi, $sql);
+              if (mysqli_num_rows($result) == 0) {
+                echo "
+                  <tr>
+                    <td colspan='5' align='center'>Data Kosong</td>
+                  </tr>
+                ";
+              }
+              while ($data = mysqli_fetch_assoc($result)) {
+                echo "
+                  <tr>
+                    <td>$data[dari]</td>
+                    <td>$data[destination]</td>
+                    <td>$data[price]</td>
+                    <td >
+                      <a class='btn-edit' href=tujuan-edit.php?id_tujuan=$data[id_tujuan]>
+                        Edit
+                      </a> | 
+                      <a class='btn-delete' href=tujuan-hapus.php?id_tujuan=$data[id_tujuan]>
+                        Hapus
+                      </a>
+                    </td>
+                  </tr>
+                ";
+              }
+            ?>
           </tbody>
         </table>
       </div>
     </section>
   </body>
-  <script>
-    // popup boxes pada konfirmasi tombol hapus
-    function hapusData() {
-      let konfirmasi = confirm("Apakah Anda yakin ingin menghapus data ini?");
-      if (konfirmasi == true) {
-        console.log("Data berhasil dihapus.");
-        alert("Data berhasil dihapus!"); // menampilkan pesan sukses
-      } else {
-        console.log("Penghapusan data dibatalkan.");
-      }
-    }
-  </script>
 </html>

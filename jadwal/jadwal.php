@@ -20,19 +20,19 @@
       </div>
       <ul class="nav-links">
         <li>
-          <a href="../admin.html">
+          <a href="../admin.php">
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="../jadwal/jadwal.html" class="active">
+          <a href="../jadwal/jadwal.php" class="active">
             <i class="bx bx-box"></i>
             <span class="links_name">Jadwal</span>
           </a>
         </li>
         <li>
-          <a href="../tujuan/tujuan.html">
+          <a href="../tujuan/tujuan.php">
             <i class="bx bx-list-ul"></i>
             <span class="links_name">Tujuan</span>
           </a>
@@ -46,16 +46,16 @@
           <i class="bx bx-menu sidebarBtn"></i>
         </div>
         <div class="profile-details">
-          <a href="#">
+          <a href="../logout.php">
             <i class="bx bx-log-out"></i>
-            <a href="../login.html">Logout</a>
+            <span class="links_name">Logout</span>
           </a>
         </div>
       </nav>
       <div class="home-content">
         <h3>Jadwal</h3>
         <button type="button" class="btn btn-tambah">
-          <a href="jadwal-entry.html">Tambah Data</a>
+          <a href="jadwal-entry.php">Tambah Data</a>
         </button>
         <table class="table-data">
           <thead>

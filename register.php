@@ -11,23 +11,17 @@
   <body>
     <div class="container">
       <div class="login">
-        <form action="">
+        <form action="register-proses.php" method="post">
           <h1>SIGN UP</h1>
           <hr />
           <p>
-            <label for="username">Userame</label>
-            <input type="text" id="name" placeholder="Usernam" />
+            <label for="username">Username</label>
+            <input class="input" type="username" name="username" placeholder="Username" />
             <label for="email">Email</label>
-            <input type="text" id="email" placeholder="Email" />
+            <input class="input" type="email" name="email" placeholder="Email" />
             <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Password" />
-            <label for="password">Confirm Password</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Confirm Password"
-            />
-            <button style="color: #ffa12c" type="submit" class="btn-register">FINISH</button>
+            <input class="input" type="password" name="password" placeholder="Password" />
+            <button style="color: #ffa12c" type="submit" class="btn-register" name="register" id="register">FINISH</button>
           </p>
         </form>
         <p>
@@ -35,7 +29,7 @@
         </p>
       </div>
       <div class="right">
-        <img src="assets/majestic.png" alt="Bokuto Daftar" class="logo" />
+        <img src="assets/majestic.png" class="logo" />
       </div>
     </div>
   </body>
