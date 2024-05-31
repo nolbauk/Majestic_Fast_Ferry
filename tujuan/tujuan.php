@@ -63,6 +63,9 @@
         <button type="submit" class="btn btn-tambah">
           <a href="tujuan-entry.php">Tambah Data</a>
         </button>
+        <button type="submit" class="btn btn-tambah">
+          <a href="tujuan-report.php">Cetak Data</a>
+        </button>
         <table class="table-data">
           <thead>
             <tr>

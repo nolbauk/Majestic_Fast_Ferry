@@ -53,23 +53,23 @@
 	<div class="home-content">
 	  <h3>Input Jadwal</h3>
 	  <div class="form-login">
-		<form action="">
-			<label for="from">From</label>
-			<input class="input" type="text" name="from"
-				id="jadwal"/>
-				<label for="destination">Destination</label>
+		<form action="jadwal-proses.php" method="post" enctype="multipart/form-data">
+			<label for="dari">From</label>
+			<input class="input" type="text" name="dari"
+					id="dari"/>
+			<label for="destination">Destination</label>
 			<input class="input" type="text" name="destination"
-				id="jadwal"/>
-	  	   <label for="sgptime">SGP Time</label>
-			<input class="input" type="text" name="sgptime"
-				id="jadwal"/>
- 		   <label for="idntime">IDN Time</label>
-			<input class="input" type="text" name="idntime"
-				id="jadwal"/>
-		   <button type="submit" class="btn btn-simpan" 
-                       name="simpan">
+					id="destination"/>
+			<label for="sgp_time">SGP Time</label>
+			<input class="input" type="time" name="sgp_time"
+					id="sgp_time"/>
+			<label for="idn_time">SGP Time</label>
+			<input class="input" type="time" name="idn_time"
+					id="idn_time"/>
+			<button type="submit" class="btn btn-simpan" 
+							name="simpan">
 					Simpan
-		   </button>
+			</button>
 		</form>
 	   </div>
 	</div>

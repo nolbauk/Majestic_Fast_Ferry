@@ -54,38 +54,59 @@
       </nav>
       <div class="home-content">
         <h3>Jadwal</h3>
-        <button type="button" class="btn btn-tambah">
+        <button type="submit" class="btn btn-tambah">
           <a href="jadwal-entry.php">Tambah Data</a>
+        </button>
+        <button type="submit" class="btn btn-tambah">
+          <a href="jadwal-report.php">Cetak Data</a>
         </button>
         <table class="table-data">
           <thead>
             <tr>
-              <th scope="col" style="width: 20%">From</th>
-              <th scope="col" style="width: 20%">Destination</th>
-              <th scope="col" style="width: 20%">SGP Time</th>
-              <th scope="col" style="width: 20%">IDN Time</th>
-              <th scope="col" style="width: 25%">Action</th>
+              <th style="width: 25%">From</th>
+              <th style="width: 25%">Destination</th>
+              <th style="width: 15%">SGP Time</th>
+              <th style="width: 15%">IDN Time</th>
+              <th style="width: 20%">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>HarbourFront</td>
-              <td>Batam Centre</td>
-              <td>08:10</td>
-              <td>07:10</td>
-              <td>
-                <button type="button" class="btn-edit">Edit</button>
-                <button type="button" class="btn-delete" onclick="hapusData()">
-                  Hapus
-                </button>
-              </td>
-            </tr>
+            <?php
+              include '../connection.php';
+              $sql = "SELECT * FROM tb_jadwal";
+              $result = mysqli_query($koneksi, $sql);
+              if (mysqli_num_rows($result) == 0) {
+                echo "
+                  <tr>
+                    <td colspan='5' align='center'>Data Kosong</td>
+                  </tr>
+                ";
+              }
+              while ($data = mysqli_fetch_assoc($result)) {
+                echo "
+                  <tr>
+                    <td>$data[dari]</td>
+                    <td>$data[destination]</td>
+                    <td>$data[sgp_time]</td>
+                    <td>$data[idn_time]</td>
+                    <td >
+                      <a class='btn-edit' href=jadwal-edit.php?id_jadwal=$data[id_jadwal]>
+                        Edit
+                      </a> | 
+                      <a class='btn-delete' href=jadwal-hapus.php?id_jadwal=$data[id_jadwal]>
+                        Hapus
+                      </a>
+                    </td>
+                  </tr>
+                ";
+              }
+            ?>
           </tbody>
         </table>
       </div>
     </section>
   </body>
-  <script>
+  <!-- <script>
     // popup boxes pada konfirmasi tombol hapus
     function hapusData() {
       let konfirmasi = confirm("Apakah Anda yakin ingin menghapus data ini?");
@@ -96,5 +117,5 @@
         console.log("Penghapusan data dibatalkan.");
       }
     }
-  </script>
+  </script> -->
 </html>
